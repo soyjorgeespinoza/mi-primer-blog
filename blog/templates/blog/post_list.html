@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -10,17 +10,13 @@
       <h1><a href="">Jorge Blogs</a>
     </div>
 
-    <div>
-      <p>Publicado: 14.06.2017, 12:14</p>
-      <h2><a href="">Mi Primer Post</a></h2>
-      <p>Lady Pizza. Hablamos de una mujer, quien hizo un escandalo exigiendo una promoción</p>
-    </div>
-
-    <div>
-      <p>Publicado: 19.09.2017, 12:14</p>
-      <h2><a href="">Mi segundo post</a></h2>
-      <p>Terremoto 2017. Un mega terremoto sacudio la CDMX </p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>publicar: {{ post.fecha_publicacion }}</p>
+            <h1><a href="">{{ post.titulo }}</a></h1>
+            <p>{{ post.texto|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
   </body>
 </html>
