@@ -20,7 +20,7 @@ def post_new(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.autor = request.user
+            post.author = request.user
             post.fecha_publicacion = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
